@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [color, setColor] = useState("olive");
 
+  // function changeColor(color) {
+  //   setColor(color);
+  // }
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="w-full h-screen" style={{ backgroundColor: color }}>
+        <div className="fixed flex flex-wrap justify-center inset-x-0 bottom-12 px-2">
+          <div className="flex flex-wrap justify-center shadow-lg bg-white gap-3 px-3 py-3 rounded-3xl">
+            <button
+              // onClick={() => changeColor("red")}
+              onClick={() => setColor("red")}
+              className="outline-none px-4 py-1 rounded-full  shadow-lg text-red-500"
+            >
+              Red
+            </button>
+            <button
+              // onClick={() => changeColor("green")}
+              onClick={() => setColor("green")}
+              className="outline-none px-4 py-1 rounded-full  shadow-lg text-green-600"
+            >
+              Green
+            </button>
+            <button
+              // onClick={() => changeColor("blue")}
+              onClick={() => setColor("blue")}
+              className="outline-none px-4 py-1 rounded-full  shadow-lg text-blue-500"
+            >
+              Blue
+            </button>
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
